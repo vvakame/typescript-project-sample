@@ -1,0 +1,21 @@
+{
+	"name": "typescript-project-sample",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": "0.8.14",
+		"npm": "1.1.65"
+	},
+	"scripts": {
+		"start": "node app"
+	},
+	"dependencies": {
+		"express": "3.0.1",
+		"typescript": "0.8.1",
+
+		"grunt-contrib": "0.3.0",
+		"grunt-typescript":"0.0.6",
+		"grunt-jasmine-task": "0.2.3",
+		"grunt-jasmine-node": "0.0.4"
+	}
+}

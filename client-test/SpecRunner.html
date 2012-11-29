@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jasmine</title>
+    <link rel="stylesheet" type="text/css" href="libs/jasmine-1.2.0/jasmine.css">
+
+    <script type="text/javascript" src="libs/jasmine-1.2.0/jasmine.js"></script>
+    <script type="text/javascript" src="libs/jasmine-1.2.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="libs/sinon-1.5.0.js"></script>
+
+    <script type="text/javascript" src="../client/scripts/libs/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../client/scripts/libs/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../client/scripts/libs/bootstrap.js"></script>
+    <script type="text/javascript" src="../client/scripts/libs/underscore.js"></script>
+    <script type="text/javascript" src="../client/scripts/libs/backbone.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript" src="../client/scripts/view.js"></script>
+
+    <script type="text/javascript" src="main-spec.js"></script>
+
+    <script type="text/javascript">
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
+        var htmlReporter = new jasmine.HtmlReporter();
+        jasmineEnv.addReporter(htmlReporter);
+        $(document).ready(function () {
+            jasmineEnv.execute();
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
