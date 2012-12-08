@@ -88,9 +88,15 @@ module.exports = function (grunt) {
 			]
 		},
 		jasmine:{
-			all:{
-				src:['client-test/SpecRunner.html'],
-				errorReporting:true
+			src: 'client/scripts/**/*.js',
+			specs: 'client-test/*-spec.js',
+			helper: 'client-test/libs/**/*.js',
+			timeout: 10000,
+			junit: {
+				output: 'client-test/reports/'
+			},
+			phantomjs:{
+				'ignore-ssl-errors' : true
 			}
 		},
 		jasmine_node:{
@@ -106,10 +112,10 @@ module.exports = function (grunt) {
 		}
 	});
 	grunt.registerTask('default', 'clean typescript copy less');
-	grunt.registerTask('test', 'clean typescript copy jasmine_node jasmine');
+	grunt.registerTask('test', 'clean typescript copy jasmine jasmine_node');
 
 	grunt.loadNpmTasks('grunt-contrib');
 	grunt.loadNpmTasks('grunt-typescript');
-	grunt.loadNpmTasks('grunt-jasmine-task');
+	grunt.loadNpmTasks('grunt-jasmine-runner');
 	grunt.loadNpmTasks('grunt-jasmine-node');
 };

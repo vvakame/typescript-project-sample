@@ -18,6 +18,10 @@ server-test/*.js
 server-test/*.js.map
 server-test/*.d.ts
 
+_SpecRunner.html
+
 server-test/reports/
+client-test/reports/
+
 sqlite/*
 tmp/*
