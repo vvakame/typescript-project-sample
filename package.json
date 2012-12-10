@@ -16,6 +16,6 @@
 		"grunt-contrib": "0.3.0",
 		"grunt-typescript":"0.0.6",
 		"grunt-jasmine-runner": "0.6.0",
-		"grunt-jasmine-node": "0.0.4"
+		"grunt-jasmine-node": "0.0.5"
 	}
 }
