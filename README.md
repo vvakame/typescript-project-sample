@@ -5,9 +5,9 @@ licensed under Apache License 2.0.
 
 # How to use #
 
-* exec `npm install`
+* exec `./setup.sh`
 	* download dependencies.
-	* required *npm*.
+	* required *npm*, *bower*, *tsd*.
 
 * exec `grunt`
 	* build project.

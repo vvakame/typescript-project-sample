@@ -111,15 +111,26 @@ module.exports = function (grunt) {
 				useDotNotation: true,
 				consolidate: true
 			}
+		},
+		testacularServer: {
+			all: {
+				configFile: 'testacular.conf.js',
+				browsers: ['PhantomJS'],
+				autoWatch: false,
+				singleRun: true,
+				options: {
+					keepalive: true
+				}
+			}
 		}
 	});
 	grunt.registerTask('default', 'clean typescript copy less');
-	grunt.registerTask('test', 'clean typescript copy jasmine jasmine_node');
+	grunt.registerTask('test', 'clean typescript copy testacularServer jasmine_node');
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-typescript');
-	grunt.loadNpmTasks('grunt-jasmine-runner');
 	grunt.loadNpmTasks('grunt-jasmine-node');
+	grunt.loadNpmTasks('grunt-testacular');
 };

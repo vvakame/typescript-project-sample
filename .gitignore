@@ -8,6 +8,10 @@ client/css/*.css
 client/scripts/*.js
 client/scripts/*.js.map
 client/scripts/*.d.ts
+
+client/scripts/libs/DefinitelyTyped/
+client/scripts/libs/jquery/
+
 client-test/*.js
 client-test/*.js.map
 client-test/*.d.ts
@@ -19,6 +23,7 @@ server-test/*.js.map
 server-test/*.d.ts
 
 _SpecRunner.html
+test-results.xml
 
 server-test/reports/
 client-test/reports/
