@@ -3,19 +3,23 @@
 	"version": "0.0.1",
 	"private": true,
 	"engines": {
-		"node": "0.8.14",
-		"npm": "1.1.65"
+		"node": "0.8.17",
+		"npm": "1.2.10"
 	},
 	"scripts": {
 		"start": "node app"
 	},
-	"dependencies": {
-		"express": "3.0.1",
-		"typescript": "0.8.1",
+	"devDependencies": {
+		"grunt": "0.3.17",
 
-		"grunt-contrib": "0.3.0",
-		"grunt-typescript":"0.0.6",
+		"grunt-typescript": "0.0.8",
+		"grunt-contrib-less": "0.3.2",
+		"grunt-contrib-clean": "0.3.0",
+		"grunt-contrib-copy": "0.3.2",
 		"grunt-jasmine-runner": "0.6.0",
-		"grunt-jasmine-node": "0.0.5"
+		"grunt-jasmine-node": "0.0.6"
+	},
+	"dependencies": {
+		"express": "3.1.0"
 	}
 }
