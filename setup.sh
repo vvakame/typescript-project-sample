@@ -15,6 +15,13 @@ if [ $? -ne 0 ] ; then
 	ISERROR=1
 fi
 
+which grunt > /dev/null 2>&1
+if [ $? -ne 0 ] ; then
+	echo "command not found: grunt"
+	echo "please install grunt. e.g. npm install -g grunt"
+	ISERROR=1
+fi
+
 which tsd > /dev/null 2>&1
 if [ $? -ne 0 ] ; then
 	echo "command not found: tsd"
