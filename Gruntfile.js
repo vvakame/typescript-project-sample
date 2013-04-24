@@ -89,18 +89,6 @@ module.exports = function (grunt) {
 				]
 			}
 		},
-		jasmine: {
-			src: 'client/scripts/**/*.js',
-			specs: 'client-test/*-spec.js',
-			helper: 'client-test/libs/**/*.js',
-			timeout: 10000,
-			junit: {
-				output: 'client-test/reports/'
-			},
-			phantomjs: {
-				'ignore-ssl-errors': true
-			}
-		},
 		jasmine_node: {
 			projectRoot: "./server-test",
 			requirejs: false,
@@ -112,25 +100,21 @@ module.exports = function (grunt) {
 				consolidate: true
 			}
 		},
-		testacularServer: {
+		karma: {
 			all: {
-				configFile: 'testacular.conf.js',
-				browsers: ['PhantomJS'],
-				autoWatch: false,
-				singleRun: true,
 				options: {
+					configFile: 'karma.conf.js',
+					browsers: ['PhantomJS'],
+					reporters: ['progress', 'junit'],
+					autoWatch: false,
+					singleRun: true,
 					keepalive: true
 				}
 			}
 		}
 	});
-	grunt.registerTask('default', 'clean typescript copy less');
-	grunt.registerTask('test', 'clean typescript copy testacularServer jasmine_node');
+	grunt.registerTask('default', ['clean', 'typescript', 'copy', 'less']);
+	grunt.registerTask('test', ['clean', 'typescript', 'copy', 'karma', 'jasmine_node']);
 
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-typescript');
-	grunt.loadNpmTasks('grunt-jasmine-node');
-	grunt.loadNpmTasks('grunt-testacular');
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };

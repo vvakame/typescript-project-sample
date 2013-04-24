@@ -10,6 +10,7 @@ basePath = './';
 files = [
 	JASMINE,
 	JASMINE_ADAPTER,
+	'client/scripts/libs/jquery/jquery.js',
 	'client/scripts/**/*.js',
 	'client-test/*.js'
 ];
