@@ -1,39 +1,35 @@
-///<reference path='libs/express-3.0.d.ts' />
+///<reference path='libs/typing/node/node.d.ts' />
+///<reference path='libs/typing/express/express.d.ts' />
 
-import express = module("express");
-import http = module("http");
-import path = module("path");
+import express = require("express");
+import http = require("http");
+import path = require("path");
 
-var app:express.ServerApplication = (<any>express)();
+var app = express();
 
-app.configure(function () {
-	app.set('port', process.env.PORT || 3000);
-	app.use((<any>express).cookieParser());
-	app.use(express.bodyParser({
-		keepExtensions: true,
-		uploadDir: './tmp'
-	}));
-	app.use(express.logger('dev'));
-	app.use(express.methodOverride());
-	app.use((<any>express).session({ secret: 'vv' }));
-	app.use(app.router);
-	app.use(express.static(path.join(__dirname, 'client')));
-});
+// all environments
+app.set("port", process.env.PORT || 8888);
+app.use(express.favicon());
+app.use(express.logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
+app.use(express.static(path.join(__dirname, "client")));
 
-app.configure('development', function () {
+// development only
+if ("development" === <any>app.get("env")) {
 	app.use(express.errorHandler());
-});
+}
 
-export var handler = (req:express.ServerRequest, resp:express.ServerResponse) => {
-	resp.contentType('application/json');
+app.get("/api/sample", (req, resp) => {
+	resp.contentType("application/json");
 
 	resp.json({
 		greeting: "Hello TypeScript!"
 	});
-};
+});
 
-app.get('/api/sample', handler);
-
-http.createServer(app).listen(app.get('port'), function () {
-	console.log("Express server listening on port " + app.get('port'));
+http.createServer(app).listen(app.get("port"), () => {
+	console.log("Express server listening on port " + app.get("port"));
 });

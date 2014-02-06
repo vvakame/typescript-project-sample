@@ -1,0 +1,15 @@
+{
+	"version": "v4",
+	"repo": "borisyankov/DefinitelyTyped",
+	"ref": "master",
+	"path": "client/scripts/libs/typing",
+	"bundle": "client/scripts/libs/typing/bundle.d.ts",
+	"installed": {
+		"jquery/jquery.d.ts": {
+			"commit": "7480b03ef1e60cda867159d10c277cc682df9fd1"
+		},
+		"jasmine/jasmine.d.ts": {
+			"commit": "71e3f62db7f3a6f642d3a59da2374a83e2283542"
+		}
+	}
+}

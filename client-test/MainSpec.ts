@@ -1,4 +1,4 @@
-///<reference path='libs/jasmine-1.2.0/jasmine-1.2.d.ts' />
+///<reference path='../client/scripts/libs/typing/jasmine/jasmine.d.ts' />
 
 module Test {
 	describe("適当なテスト", ()=> {

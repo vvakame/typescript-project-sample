@@ -1,0 +1,18 @@
+{
+	"version": "v4",
+	"repo": "borisyankov/DefinitelyTyped",
+	"ref": "master",
+	"path": "server/libs/typing",
+	"bundle": "server/libs/typing/bundle.d.ts",
+	"installed": {
+		"node/node.d.ts": {
+			"commit": "71e3f62db7f3a6f642d3a59da2374a83e2283542"
+		},
+		"express/express.d.ts": {
+			"commit": "71e3f62db7f3a6f642d3a59da2374a83e2283542"
+		},
+		"jasmine/jasmine.d.ts": {
+			"commit": "71e3f62db7f3a6f642d3a59da2374a83e2283542"
+		}
+	}
+}

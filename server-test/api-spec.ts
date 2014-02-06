@@ -1,4 +1,4 @@
-///<reference path='../client-test/libs/jasmine-1.2.0/jasmine-1.2.d.ts' />
+///<reference path='../server/libs/typing/jasmine/jasmine.d.ts' />
 
 module Test {
 	describe("ふげ.ts", ()=> {

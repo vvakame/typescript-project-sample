@@ -1,4 +1,4 @@
-///<reference path='libs/DefinitelyTyped/jquery/jquery.d.ts' />
+///<reference path='libs/typing/jquery/jquery.d.ts' />
 
 module Main {
 

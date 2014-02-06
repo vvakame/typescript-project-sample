@@ -1,5 +1,14 @@
-node_modules/
+.DS_Store
+
 .idea/
+
+node_modules/
+.sass-cache/
+tsd-cache/
+bower_components/
+bower-task/
+
+tscommand.tmp.txt
 
 app.js
 
@@ -9,8 +18,12 @@ client/scripts/*.js
 client/scripts/*.js.map
 client/scripts/*.d.ts
 
-client/scripts/libs/DefinitelyTyped/
+client/scripts/libs/typing/
 client/scripts/libs/jquery/
+
+client/scripts/libs/
+
+client-test/libs/
 
 client-test/*.js
 client-test/*.js.map
@@ -21,6 +34,8 @@ server/*.d.ts
 server-test/*.js
 server-test/*.js.map
 server-test/*.d.ts
+
+server/libs/typing/
 
 _SpecRunner.html
 test-results.xml
