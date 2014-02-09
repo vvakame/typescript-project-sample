@@ -1,4 +1,4 @@
-# TypeScript project sample [![Build Status](https://travis-ci.org/vvakame/typescript-project-sample.png?branch=master)](https://travis-ci.org/vvakame/typescript-project-sample) 
+# TypeScript project sample [![Build Status](https://travis-ci.org/vvakame/typescript-project-sample.png?branch=master)](https://travis-ci.org/vvakame/typescript-project-sample) [![Dependency Status](https://david-dm.org/vvakame/typescript-project-sample.png?theme=shields.io)](https://david-dm.org/vvakame/typescript-project-sample)
 
 licensed under Apache License 2.0.
 
