@@ -1,9 +1,10 @@
-TypeScript project sample
+# TypeScript project sample [![Build Status](https://travis-ci.org/vvakame/typescript-project-sample.png?branch=master)](https://travis-ci.org/vvakame/typescript-project-sample) 
+
 licensed under Apache License 2.0.
 
 =========================
 
-# How to use #
+## How to use
 
 * exec `./setup.sh`
 	* download dependencies.
