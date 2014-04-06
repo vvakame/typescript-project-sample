@@ -4,6 +4,7 @@
 
 node_modules/
 .sass-cache/
+.tscache/
 tsd-cache/
 bower_components/
 bower-task/

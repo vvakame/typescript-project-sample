@@ -3,15 +3,15 @@
 	"version": "0.0.1",
 	"dependencies": {
 		"jquery": "2.1.0",
-		"es5-shim": "2.1.0"
+		"es5-shim": "2.3.0"
 	},
 	"devDependencies": {
-		"mocha": "1.14.0",
+		"mocha": "1.18.2",
 		"expectations": "0.2.5"
 	},
 	"exportsOverride": {
 		"jquery": {
-			"main-js": "**/jquery.js"
+			"main-js": "dist/jquery.js"
 		},
 		"es5-shim": {
 			"main-js": "es5-shim.js"
