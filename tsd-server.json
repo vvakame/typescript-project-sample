@@ -6,13 +6,13 @@
 	"bundle": "server/libs/typing/bundle.d.ts",
 	"installed": {
 		"node/node.d.ts": {
-			"commit": "c5b96cf32798d0ad6e52c4d27986c716b56a692e"
+			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
 		},
 		"express/express.d.ts": {
-			"commit": "c5b96cf32798d0ad6e52c4d27986c716b56a692e"
+			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
 		},
 		"jasmine/jasmine.d.ts": {
-			"commit": "c5b96cf32798d0ad6e52c4d27986c716b56a692e"
+			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
 		}
 	}
 }

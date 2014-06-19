@@ -2,11 +2,11 @@
 	"name": "typescript-project-sample",
 	"version": "0.0.1",
 	"dependencies": {
-		"jquery": "2.1.0",
-		"es5-shim": "2.3.0"
+		"jquery": "2.1.1",
+		"es5-shim": "3.4.0"
 	},
 	"devDependencies": {
-		"mocha": "1.18.2",
+		"mocha": "1.20.1",
 		"expectations": "0.2.5"
 	},
 	"exportsOverride": {
