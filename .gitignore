@@ -41,6 +41,8 @@ server/libs/typing/
 _SpecRunner.html
 test-results.xml
 
+client-test-espowered/
+
 server-test/reports/
 client-test/reports/
 

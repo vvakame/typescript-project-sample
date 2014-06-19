@@ -1,9 +1,10 @@
-///<reference path='../server/libs/typing/jasmine/jasmine.d.ts' />
+///<reference path='../client/scripts/libs/typing/mocha/mocha.d.ts' />
+///<reference path='../client/scripts/libs/typing/assert/assert.d.ts' />
 
 module Test {
 	describe("ふげ.ts", ()=> {
 		it("ふげふげ できること", () => {
-			expect("ふげふげ").not.toBeNull();
+			assert("ふげふげ" !== null);
 		});
 	});
 }

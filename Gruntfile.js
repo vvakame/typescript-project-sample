@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+	require("time-grunt")(grunt);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -12,6 +14,7 @@ module.exports = function (grunt) {
 
 				"jsMainOut": "client/scripts",
 				"jsTestOut": "client-test",
+				"jsEspowerOut": "client-test-espowered",
 				"cssOut": "client/css"
 			},
 			"server": {
@@ -56,54 +59,7 @@ module.exports = function (grunt) {
 		tslint: {
 			options: {
 				formatter: "prose",
-				configuration: {
-					// https://github.com/palantir/tslint#supported-rules
-					"rules": {
-						"bitwise": true,
-						"classname": true,
-						"curly": true,
-						"debug": false,
-						"dupkey": true,
-						"eofline": true,
-						"eqeqeq": true,
-						"evil": true,
-						"forin": false, // TODO 解消方法よくわからない
-						// "indent": [false, 4], // WebStormのFormatterと相性が悪い
-						"labelpos": true,
-						"label-undefined": true,
-						// "maxlen": [false, 140],
-						"noarg": true,
-						"noconsole": [false,
-							"debug",
-							"info",
-							"time",
-							"timeEnd",
-							"trace"
-						],
-						"noconstruct": true,
-						"nounreachable": false, // switchに警告出してくるので…
-						"noempty": false, // プロパティアクセス付き引数有りのコンストラクタまで怒られるので
-						"oneline": [true,
-							"check-open-brace",
-							"check-catch",
-							"check-else",
-							"check-whitespace"
-						],
-						"quotemark": [true, "double"],
-						"radix": false, // 10の基数指定するのめんどいので
-						"semicolon": true,
-						"sub": true,
-						"trailing": true,
-						"varname": false, // _hoge とかが許可されなくなるので…
-						"whitespace": [false, // WebStormのFormatterと相性が悪い
-							"check-branch",
-							"check-decl",
-							"check-operator",
-							"check-separator" ,
-							"check-type"
-						]
-					}
-				}
+				configuration: grunt.file.readJSON("tslint.json")
 			},
 			files: {
 				src: [
@@ -127,6 +83,32 @@ module.exports = function (grunt) {
 						return true;
 					}
 				}
+			}
+		},
+		typedoc: {
+			main: {
+				options: {
+					// module: "<%= ts.options.module %>",
+					out: './docs',
+					name: '<%= pkg.name %>',
+					target: '<%= ts.options.target %>'
+				},
+				src: [
+					'<%= opt.client.tsMain %>/**/*'
+				]
+			}
+		},
+		espower: {
+			client: {
+				files: [
+					{
+						expand: true,				// Enable dynamic expansion.
+						cwd: '<%= opt.client.jsTestOut %>/',				// Src matches are relative to this path.
+						src: ['**/*.js'],		// Actual pattern(s) to match.
+						dest: '<%= opt.client.jsEspowerOut %>/',	// Destination path prefix.
+						ext: '.js'					 // Dest filepaths will have this extension.
+					}
+				]
 			}
 		},
 		compass: {
@@ -237,7 +219,8 @@ module.exports = function (grunt) {
 					// client test
 					'<%= opt.client.jsTestOut %>/*.js',
 					'<%= opt.client.jsTestOut %>/*.d.ts',
-					'<%= opt.client.jsTestOut %>/*.js.map'
+					'<%= opt.client.jsTestOut %>/*.js.map',
+					'<%= opt.client.jsEspowerOut %>/'
 				]
 			}
 		},
@@ -245,7 +228,17 @@ module.exports = function (grunt) {
 			test: {
 				options: {
 					reporter: 'spec',
-					require: 'expectations'
+					require: [
+						function () {
+							require('espower-loader')({
+								cwd: process.cwd() + '/' + grunt.config.get("opt.server.jsTestOut"),
+								pattern: '**/*.js'
+							});
+						},
+						function () {
+							assert = require('power-assert');
+						}
+					]
 				},
 				src: [
 					'<%= opt.server.jsMainOut %>/**/*.js',
@@ -269,7 +262,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('setup', ['clean', 'bower', 'tsd']);
 	grunt.registerTask('default', ['clean', 'ts', 'tslint', 'copy', 'compass']);
-	grunt.registerTask('test', ['clean', 'ts', 'copy', 'karma', 'mochaTest']);
+	grunt.registerTask('test', ['clean', 'ts', 'copy', 'espower', 'karma', 'mochaTest']);
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };

@@ -8,7 +8,10 @@
 		"jquery/jquery.d.ts": {
 			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
 		},
-		"jasmine/jasmine.d.ts": {
+		"mocha/mocha.d.ts": {
+			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
+		},
+		"assert/assert.d.ts": {
 			"commit": "4cf10109b729a39130cb13bb3d4a069e6a2c2eb1"
 		}
 	}
