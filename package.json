@@ -11,37 +11,36 @@
 		"test": "grunt test"
 	},
 	"dependencies": {
-		"express": "3.10.5"
+		"express": "3.20.1"
 	},
 	"devDependencies": {
 		"grunt": "0.4.5",
 
-		"typescript": "1.0.1",
-		"grunt-ts": "1.11.2",
-		"grunt-tslint": "0.4.1",
+		"typescript": "1.4.1",
+		"grunt-ts": "3.0.0",
+		"grunt-tslint": "2.0.0",
 		"grunt-tsd": "0.1.0",
-		"grunt-typedoc": "0.1.1",
+		"grunt-typedoc": "0.2.1",
 
-		"grunt-contrib-compass": "0.8.0",
-		"grunt-bower-task": "0.3.4",
+		"grunt-contrib-compass": "1.0.1",
+		"grunt-bower-task": "0.4.0",
 
-		"grunt-contrib-clean": "0.5.0",
-		"grunt-contrib-copy": "0.5.0",
+		"grunt-contrib-clean": "0.6.0",
+		"grunt-contrib-copy": "0.8.0",
 
-		"grunt-karma": "0.8.3",
-		"karma-mocha": "0.1.4",
+		"grunt-karma": "0.10.1",
+		"karma-mocha": "0.1.10",
 		"karma-phantomjs-launcher": "0.1.4",
 		"karma-junit-reporter": "0.2.2",
 
-		"expectations": "0.2.5",
-		"grunt-mocha": "0.4.11",
-		"grunt-mocha-test": "0.11.0",
-		"power-assert": "0.7.2",
-		"espower-loader": "0.7.1",
-		"grunt-espower": "0.7.1",
+		"expectations": "0.4.2",
+		"grunt-mocha": "0.4.12",
+		"grunt-mocha-test": "0.12.7",
+		"power-assert": "0.10.2",
+		"espower-loader": "0.10.0",
+		"grunt-espower": "0.10.0",
 
-		"grunt-notify": "0.3.0",
-		"time-grunt": "0.3.2",
+		"time-grunt": "1.1.0",
 		"matchdep": "0.3.0"
 	}
 }
