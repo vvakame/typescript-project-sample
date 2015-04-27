@@ -32,7 +32,6 @@ module.exports = function (grunt) {
 				compile: true,                 // perform compilation. [true (default) | false]
 				comments: false,               // same as !removeComments. [true | false (default)]
 				target: 'es5',                 // target javascript language. [es3 (default) | es5]
-				module: 'commonjs',            // target javascript module style. [amd (default) | commonjs]
 				noImplicitAny: true,
 				sourceMap: false,              // generate a source map for every output js file. [true (default) | false]
 				sourceRoot: '',                // where to locate TypeScript files. [(default) '' == source ts location]
@@ -49,7 +48,9 @@ module.exports = function (grunt) {
 			},
 			serverMain: {
 				src: ['<%= opt.server.tsMain %>/app.ts'],
-				out: '<%= opt.server.jsMainOut %>/app.js'
+				options: {
+					module: 'commonjs',            // target javascript module style. [amd (default) | commonjs]
+				}
 			},
 			serverTest: {
 				src: ['<%= opt.server.tsTest %>/api-spec.ts'],
