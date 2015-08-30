@@ -18,6 +18,7 @@
     "grunt-espower": "1.0.0",
     "grunt-mocha-test": "0.12.7",
     "grunt-ts": "5.0.0-beta.1",
+    "grunt-tsconfig-update": "0.0.1",
     "grunt-tslint": "2.4.0",
     "grunt-typedoc": "0.2.2",
     "load-grunt-tasks": "3.2.0",

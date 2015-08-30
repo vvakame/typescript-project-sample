@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 	require("time-grunt")(grunt);
 
 	grunt.initConfig({
@@ -83,7 +83,7 @@ module.exports = function (grunt) {
 					baseDir: "",
 					out: "./typescript-project-sample.d.ts",
 					prefix: '',
-					exclude: function () {return false;},
+					exclude: function() { return false; },
 					verbose: false
 				}
 			}
@@ -91,12 +91,12 @@ module.exports = function (grunt) {
 		clean: {
 			clientScript: {
 				src: [
-					// client
+				// client
 					'<%= opt.client.jsMainOut %>/**/*.js',
 					'<%= opt.client.jsMainOut %>/**/*.d.ts',
 					'<%= opt.client.jsMainOut %>/**/*.js.map',
 					'!<%= opt.client.jsMainOut %>/typings/**/*.d.ts',
-					// client test
+				// client test
 					'<%= opt.client.jsTestOut %>/*.js',
 					'<%= opt.client.jsTestOut %>/suite/**/*.js',
 					'<%= opt.client.jsTestOut %>/suite/**/*.js.map',
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 			},
 			dtsm: {
 				src: [
-					// dtsm installed
+				// dtsm installed
 					"typings/"
 				]
 			}
@@ -115,13 +115,13 @@ module.exports = function (grunt) {
 				options: {
 					reporter: 'spec',
 					require: [
-						function () {
+						function() {
 							require('espower-loader')({
 								cwd: process.cwd() + '/' + grunt.config.get("opt.client.jsTestOut"),
 								pattern: '**/*.js'
 							});
 						},
-						function () {
+						function() {
 							assert = require('power-assert');
 						}
 					]
@@ -135,11 +135,11 @@ module.exports = function (grunt) {
 
 	grunt.registerTask(
 		'setup',
-		['clean', 'dtsm']);
+		['clean', 'dtsm', 'tsconfig']);
 
 	grunt.registerTask(
 		'default',
-		['clean:clientScript', 'ts:clientMain', 'ts:clientCli', 'tslint']);
+		['clean:clientScript', 'ts:clientMain', 'tslint']);
 
 	grunt.registerTask(
 		'test-preprocess',
