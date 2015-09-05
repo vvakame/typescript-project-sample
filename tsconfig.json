@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "umd",
+        "target": "es5",
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": true,
+        "listFiles": true,
+        "newLine": "LF",
+        "noEmitOnError": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

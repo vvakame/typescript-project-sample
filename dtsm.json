@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "mocha/mocha.d.ts": {
-      "ref": "67605e10f6eb01c9d4a0d13719d804d6dea9e1cb"
+      "ref": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
     },
     "power-assert/power-assert.d.ts": {
-      "ref": "67605e10f6eb01c9d4a0d13719d804d6dea9e1cb"
+      "ref": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
     }
   }
 }
