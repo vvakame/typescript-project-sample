@@ -1,7 +1,7 @@
 "use strict";
 
 export function hi(word = "TypeScript") {
-	"use strict";
+    "use strict";
 
-	return `Hi! ${word}`;
+    return `Hi! ${word}`;
 }

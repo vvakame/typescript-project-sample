@@ -11,54 +11,54 @@ let espower = require("gulp-espower");
 let mocha = require("gulp-mocha");
 
 gulp.task("tsconfig", () => {
-	gulp
-		.src([
-			"./lib/**/*.ts",
-			"!./lib/**/*.d.ts",
-			"./test/**/*.ts",
-			"!./test/**/*.d.ts",
-			"./typings/**/*.ts",
-			"./node_modules/commandpost/commandpost.d.ts",
-			"./node_modules/typescript/bin/lib.es6.d.ts"
-		])
-		.pipe(tsconfig());
+    gulp
+        .src([
+            "./lib/**/*.ts",
+            "!./lib/**/*.d.ts",
+            "./test/**/*.ts",
+            "!./test/**/*.d.ts",
+            "./typings/**/*.ts",
+            "./node_modules/commandpost/commandpost.d.ts",
+            "./node_modules/typescript/bin/lib.es6.d.ts"
+        ])
+        .pipe(tsconfig());
 });
 
 gulp.task("tsc", shell.task([
-	"node_modules/.bin/tsc -p ./"
+    "node_modules/.bin/tsc -p ./"
 ]));
 
 gulp.task("tslint", () => {
-	gulp
-		.src([
-			"./lib/**/*.ts",
-			"./test/**/*.ts"
-		])
-		.pipe(tslint({
-			config: "/tslint.json"
-		}))
-		.pipe(tslint.report("verbose"));
+    gulp
+        .src([
+            "./lib/**/*.ts",
+            "./test/**/*.ts"
+        ])
+        .pipe(tslint({
+            config: "/tslint.json"
+        }))
+        .pipe(tslint.report("verbose"));
 });
 
 gulp.task("espower", () => {
-	gulp
-		.src([
-			"./test/**/*.js"
-		])
-		.pipe(espower())
-		.pipe(gulp.dest("./espowered"));
+    gulp
+        .src([
+            "./test/**/*.js"
+        ])
+        .pipe(espower())
+        .pipe(gulp.dest("./espowered"));
 });
 
 gulp.task("test", () => {
-	gulp
-		.src([
-			"./lib/**/*.js",
-			"!./lib/cli.js",
-			"./espowered/**/*.js"
-		])
-		.pipe(mocha());
+    gulp
+        .src([
+            "./lib/**/*.js",
+            "!./lib/cli.js",
+            "./espowered/**/*.js"
+        ])
+        .pipe(mocha());
 });
 
-gulp.task("default", (cb:Function) => {
-	runSequence("tsconfig", "tsc", "tslint", "espower", "test", cb);
+gulp.task("default", (cb: Function) => {
+    runSequence("tsconfig", "tsc", "tslint", "espower", "test", cb);
 });
