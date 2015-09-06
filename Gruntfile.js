@@ -18,15 +18,15 @@ module.exports = function(grunt) {
 		ts: {
 			default: {
 				tsconfig: {
-					tsconfig: "./tsconfig.json",
-					overwriteFilesGlob: true // reference `src`
-				},
-				// grunt-ts@5.0.0-beta.4 is not supported `exclude` properties
-				src: [
-					'<%= opt.client.tsMain %>/**/*.ts',
-					'<%= opt.client.tsTest %>/**/*.ts',
-					'typings/**/*.ts'
-				]
+					tsconfig: "./tsconfig.json"
+				}
+			}
+		},
+		tsconfig: {
+			main: {
+				options: {
+					project: "./"
+				}
 			}
 		},
 		tslint: {
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 					]
 				},
 				src: [
-					'<%= opt.client.jsTestOut %>/suite/indexSpec.js'
+					'<%= opt.client.jsTestOut %>/indexSpec.js'
 				]
 			}
 		}
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'default',
-		['clean:clientScript', 'ts', 'tslint']);
+		['clean:clientScript', 'tsconfig', 'ts', 'tslint']);
 
 	grunt.registerTask(
 		'test-preprocess',

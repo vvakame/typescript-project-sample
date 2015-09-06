@@ -9,7 +9,9 @@
     "start": "node app",
     "test": "grunt test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "commandpost": "0.1.1"
+  },
   "devDependencies": {
     "espower-loader": "1.0.0",
     "grunt": "0.4.5",
@@ -18,11 +20,12 @@
     "grunt-espower": "1.0.0",
     "grunt-mocha-test": "0.12.7",
     "grunt-ts": "5.0.0-beta.4",
+    "grunt-tsconfig-update": "0.0.1",
     "grunt-tslint": "2.5.0",
     "grunt-typedoc": "0.2.2",
     "load-grunt-tasks": "3.2.0",
     "power-assert": "1.0.0",
     "time-grunt": "1.2.1",
-    "typescript": "1.6.0-beta"
+    "typescript": "1.5.3"
   }
 }

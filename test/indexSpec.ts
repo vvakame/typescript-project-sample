@@ -1,12 +1,13 @@
-///<reference path='../typings/mocha/mocha.d.ts' />
-///<reference path='../typings/power-assert/power-assert.d.ts' />
+"use strict";
 
-module Test {
-	"use strict";
+import * as lib from "../lib/index";
 
-	describe("適当なテスト", ()=> {
-		it("ほげほげ できること", () => {
-			assert("ふげふげ" !== null);
-		});
+describe("適当なテスト", () => {
+	it("Hi! TypeScript", () => {
+		assert(lib.hi() === "Hi! TypeScript");
 	});
-}
+
+	it("Hi! vvakame", () => {
+		assert(lib.hi("vvakame") === "Hi! vvakame");
+	});
+});

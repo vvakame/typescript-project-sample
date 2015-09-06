@@ -1,1 +1,7 @@
-/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
+"use strict";
+
+export function hi(word = "TypeScript") {
+	"use strict";
+
+	return `Hi! ${word}`;
+}

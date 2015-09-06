@@ -1,17 +1,33 @@
 {
     "compilerOptions": {
-        "module": "umd",
+        "module": "commonjs",
         "target": "es5",
         "noImplicitAny": true,
         "experimentalDecorators": true,
-        "rootDir": ".",
         "sourceMap": true,
         "declaration": true,
-        "listFiles": true,
-        "newLine": "LF",
         "noEmitOnError": true
     },
-    "exclude": [
-        "node_modules"
+    "filesGlob": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "!./lib/**/*.d.ts",
+        "!./test/**/*.d.ts",
+        "!./node_modules/**/*",
+        "./node_modules/commandpost/commandpost.d.ts",
+        "./node_modules/typescript/bin/lib.es6.d.ts"
+    ],
+    "files": [
+        "./lib/cli.ts",
+        "./lib/index.ts",
+        "./test/indexSpec.ts",
+        "./typings/bundle.d.ts",
+        "./typings/empower/empower.d.ts",
+        "./typings/mocha/mocha.d.ts",
+        "./typings/node/node.d.ts",
+        "./typings/power-assert-formatter/power-assert-formatter.d.ts",
+        "./typings/power-assert/power-assert.d.ts",
+        "./node_modules/commandpost/commandpost.d.ts",
+        "./node_modules/typescript/bin/lib.es6.d.ts"
     ]
 }
