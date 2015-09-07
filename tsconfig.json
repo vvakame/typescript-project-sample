@@ -20,17 +20,17 @@
     "files": [
         "./lib/cli.ts",
         "./lib/index.ts",
-        "./node_modules/commandpost/commandpost.d.ts",
-        "./node_modules/typescript/bin/lib.es6.d.ts",
         "./test/indexSpec.ts",
-        "./typings/bundle.d.ts",
         "./typings/empower/empower.d.ts",
-        "./typings/gulp/gulp.d.ts",
         "./typings/mocha/mocha.d.ts",
+        "./typings/gulp/gulp.d.ts",
         "./typings/node/node.d.ts",
         "./typings/orchestrator/orchestrator.d.ts",
-        "./typings/power-assert-formatter/power-assert-formatter.d.ts",
         "./typings/power-assert/power-assert.d.ts",
-        "./typings/q/Q.d.ts"
+        "./typings/power-assert-formatter/power-assert-formatter.d.ts",
+        "./typings/q/Q.d.ts",
+        "./typings/bundle.d.ts",
+        "./node_modules/commandpost/commandpost.d.ts",
+        "./node_modules/typescript/bin/lib.es6.d.ts"
     ]
 }
