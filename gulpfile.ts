@@ -11,7 +11,7 @@ let espower = require("gulp-espower");
 let mocha = require("gulp-mocha");
 
 gulp.task("tsconfig", () => {
-    gulp
+    return gulp
         .src([
             "./lib/**/*.ts",
             "!./lib/**/*.d.ts",
@@ -29,7 +29,7 @@ gulp.task("tsc", shell.task([
 ]));
 
 gulp.task("tslint", () => {
-    gulp
+    return gulp
         .src([
             "./lib/**/*.ts",
             "./test/**/*.ts"
@@ -41,7 +41,7 @@ gulp.task("tslint", () => {
 });
 
 gulp.task("espower", () => {
-    gulp
+    return gulp
         .src([
             "./test/**/*.js"
         ])
@@ -50,7 +50,7 @@ gulp.task("espower", () => {
 });
 
 gulp.task("test", () => {
-    gulp
+    return gulp
         .src([
             "./lib/**/*.js",
             "!./lib/cli.js",
