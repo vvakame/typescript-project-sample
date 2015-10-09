@@ -19,7 +19,7 @@ gulp.task("tsconfig", () => {
             "!./test/**/*.d.ts",
             "./typings/**/*.ts",
             "./node_modules/commandpost/commandpost.d.ts",
-            "./node_modules/typescript/bin/lib.es6.d.ts"
+            "./node_modules/typescript/lib/lib.es6.d.ts"
         ])
         .pipe(tsconfig());
 });

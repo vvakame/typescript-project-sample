@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 		ts: {
 			default: {
 				tsconfig: {
-					tsconfig: "./tsconfig.json"
+					tsconfig: "./tsconfig.json",
+					updateFiles: false
 				}
 			}
 		},
