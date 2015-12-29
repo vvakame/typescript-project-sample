@@ -1,6 +1,6 @@
 "use strict";
 
-import * as assert from "power-assert";
+import assert from "power-assert";
 import * as lib from "../lib/index";
 
 describe("適当なテスト", () => {
